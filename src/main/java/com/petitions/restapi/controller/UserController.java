@@ -103,7 +103,7 @@ public class UserController {
 	 * Create - Add a certain number of new users
 	 * @param nb number of users to be added
 	 */
-	@ShellMethod("Add a give number of users to the datastore : populate-users <number>")
+	/*@ShellMethod("Add a give number of users to the datastore : populate-users <number>")
 	public String populateUsers(int nb) {
 		ArrayList<User> listUsers = new ArrayList<>();//for visual confirmation
 		for (int i=0 ; i<nb ; i++) {			
@@ -124,5 +124,5 @@ public class UserController {
 		}
 		//visual confirmation
 		return listUsers.toString();
-	}
+	}*/
 }
