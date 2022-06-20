@@ -1,27 +1,43 @@
 package com.petitions.restapi.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.data.annotation.Id;
+
+import com.google.cloud.spring.data.datastore.core.mapping.Entity;
+import com.google.cloud.spring.data.datastore.core.mapping.Field;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
-@Entity
-@Table(name = "user")
+@Getter
+@Setter
+@Entity(name = "user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="first_name")
+    @Field(name = "first_name")
     private String firstName;
-    @Column(name="last_name")
+    @Field(name = "last_name")
     private String lastName;
-    @Column
     private String mail;
-    @Column
     private String password;
+    
+    public User(String firstName, String lastName, String mail, String password) {
+    	this.firstName = firstName;
+    	this.lastName = lastName;
+    	this.mail = mail;
+    	this.password = password;
+    }
+    
+    @Override
+    public String toString() {
+      return "User{" +
+          "id=" + this.id +
+          ", first name='" + this.firstName + '\'' +
+          ", last name='" + this.lastName + '\'' +
+          ", mail='" + this.mail + '\'' +
+          ", password=" + this.password +
+          '}';
+    }
 }

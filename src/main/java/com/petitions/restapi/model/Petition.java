@@ -2,27 +2,22 @@ package com.petitions.restapi.model;
 
 import java.util.HashSet;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.data.annotation.Id;
+
+import com.google.cloud.spring.data.datastore.core.mapping.Entity;
+import com.google.cloud.spring.data.datastore.core.mapping.Field;
 
 import lombok.Data;
 
 @Data
-@Entity
-@Table(name = "petition")
+@Entity(name = "petition")
 public class Petition {
 	@Id
-	private String id;		
-	@Column(name="creator_id")
+	private String id;
 	private String creator;
-	@Column
-	private String title;	
-	@Column
+	private String title;
 	private String description;	
-	@Column
-	private HashSet<String> tags;	
-	@Column(name="signature_nb")
+	private HashSet<String> tags;
+    @Field(name = "signature_number")
 	private int signatureNumber;
 }

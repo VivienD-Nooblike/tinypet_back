@@ -1,5 +1,6 @@
 package com.petitions.restapi.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,23 @@ public class UserService {
     public void deleteUser(final Long id) {
     	userRepository.deleteById(id);
     }
+    
+    public void deleteAllUsers() {
+    	userRepository.deleteAll();
+    }
 
     public User saveUser(User user) {
     	User savedUser = userRepository.save(user);
         return savedUser;
     }
+    
+
+	public List<User> getUsersByFullName(String firstName, String lastName){
+		return userRepository.findByFullName(firstName, lastName);
+	};
+	
+	public List<User> getUsersByMail(String mail){
+		return userRepository.findByMail(mail);
+	};
 	
 }
