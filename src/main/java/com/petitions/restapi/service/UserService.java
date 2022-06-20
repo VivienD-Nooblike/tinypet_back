@@ -39,8 +39,8 @@ public class UserService {
     }
     
 
-	public List<User> getUsersByFullName(String firstName, String lastName){
-		return userRepository.findByFullName(firstName, lastName);
+	public List<User> getUsersByLastNameAndFirstName(String firstName, String lastName){
+		return userRepository.findByLastNameAndFirstName(firstName, lastName);
 	};
 	
 	public List<User> getUsersByMail(String mail){

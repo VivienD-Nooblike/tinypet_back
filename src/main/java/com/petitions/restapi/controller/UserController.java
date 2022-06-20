@@ -92,8 +92,8 @@ public class UserController {
 	 */
 	@ShellMethod
 	@GetMapping("/users/{firstName}/{lastName}")
-	List<User> getUsersByFullName(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName){
-		return userService.getUsersByFullName(firstName, lastName);
+	List<User> getUsersByLastNameAndFirstName(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName){
+		return userService.getUsersByLastNameAndFirstName(firstName, lastName);
 	};
 	
 	/**

@@ -9,6 +9,6 @@ import com.petitions.restapi.model.User;
 
 @Repository
 public interface UserRepository extends DatastoreRepository<User, Long> {
-	List<User> findByFullName(String firstName, String lastName);
+	List<User> findByLastNameAndFirstName(String firstName, String lastName);
 	List<User> findByMail(String mail);
 }
