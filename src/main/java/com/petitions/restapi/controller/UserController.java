@@ -22,7 +22,6 @@ import com.petitions.restapi.service.UserService;
 public class UserController {	
 	@Autowired
 	private UserService userService;
-	private User user;
 
 	/**
 	 * Create - Add a new user
@@ -112,11 +111,7 @@ public class UserController {
 			String lastName = "last"+i;
 			String mail = firstName+lastName+"@test.fr";
 			String password = "test"+i;
-			
-			user.setFirstName(firstName);
-			user.setLastName(lastName);
-			user.setMail(mail);
-			user.setPassword(password);
+			User user = new User(firstName, lastName, mail, password);
 					
 			//Put user into data store
 			listUsers.add(user);
