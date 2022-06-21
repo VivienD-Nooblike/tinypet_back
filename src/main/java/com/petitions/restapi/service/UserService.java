@@ -17,7 +17,7 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-    public Optional<User> getUser(final String id) {
+    public Optional<User> getUser(final Long id) {
         return userRepository.findById(id);
     }
 
@@ -25,7 +25,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public void deleteUser(final String id) {
+    public void deleteUser(final Long id) {
     	userRepository.deleteById(id);
     }
     

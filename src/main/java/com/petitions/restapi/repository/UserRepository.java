@@ -8,7 +8,7 @@ import com.google.cloud.spring.data.datastore.repository.DatastoreRepository;
 import com.petitions.restapi.model.User;
 
 @Repository
-public interface UserRepository extends DatastoreRepository<User, String> {
+public interface UserRepository extends DatastoreRepository<User, Long> {
 	List<User> findByLastNameAndFirstName(String firstName, String lastName);
 	List<User> findByMail(String mail);
 }

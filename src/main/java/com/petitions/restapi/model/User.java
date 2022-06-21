@@ -1,5 +1,6 @@
 package com.petitions.restapi.model;
 
+
 import org.springframework.data.annotation.Id;
 
 import com.google.cloud.spring.data.datastore.core.mapping.Entity;
@@ -14,8 +15,8 @@ import lombok.Setter;
 @Setter
 @Entity(name = "user")
 public class User {
-    @Id
-    private String id;
+	@Id
+    private Long id;
     @Field(name = "first_name")
     private String firstName;
     @Field(name = "last_name")
