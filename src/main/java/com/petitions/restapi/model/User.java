@@ -15,7 +15,7 @@ import lombok.Setter;
 @Entity(name = "user")
 public class User {
     @Id
-    private Long id;
+    private String id;
     @Field(name = "first_name")
     private String firstName;
     @Field(name = "last_name")

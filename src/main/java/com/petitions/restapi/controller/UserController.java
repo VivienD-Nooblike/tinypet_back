@@ -48,7 +48,7 @@ public class UserController {
 	 * @return A User object full filled
 	 */
 	@GetMapping("/user/{id}")
-	public User getUser(@PathVariable("id") final Long id) {
+	public User getUser(@PathVariable("id") final String id) {
 		Optional<User> user = userService.getUser(id);
 		if(user.isPresent()) {
 			return user.get();
@@ -83,7 +83,7 @@ public class UserController {
 	 * @param id The id of the employee
 	 */	
 	@DeleteMapping("/user/searchId/{id}")
-    public void deleteUser(@PathVariable("id") final Long id) {
+    public void deleteUser(@PathVariable("id") final String id) {
     	userService.deleteUser(id);
     }
 	
