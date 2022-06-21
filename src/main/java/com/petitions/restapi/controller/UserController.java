@@ -63,7 +63,7 @@ public class UserController {
 	 * @param lastName The last name of the user
 	 * @return An Employee object full filled
 	 */
-	@GetMapping("/users/{firstName}/{lastName}")
+	@GetMapping("/users/searchName/{firstName}/{lastName}")
 	List<User> getUsersByLastNameAndFirstName(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName){
 		return userService.getUsersByLastNameAndFirstName(firstName, lastName);
 	};
@@ -73,7 +73,7 @@ public class UserController {
 	 * @param id The id of the employee
 	 * @return An Employee object full filled
 	 */
-	@GetMapping("/user/{mail}")
+	@GetMapping("/user/searchMail/{mail}")
 	List<User> getUsersByMail(@PathVariable("mail") String mail){
 		return userService.getUsersByMail(mail);
 	};
@@ -82,7 +82,7 @@ public class UserController {
 	 * Delete - Delete one employee 
 	 * @param id The id of the employee
 	 */	
-	@DeleteMapping("/user/{id}")
+	@DeleteMapping("/user/searchId/{id}")
     public void deleteUser(@PathVariable("id") final Long id) {
     	userService.deleteUser(id);
     }
@@ -90,7 +90,7 @@ public class UserController {
 	//SHELL METHODS
 	
 	/**
-	 * Delete - Delete one employee 
+	 * Delete - Delete all users 
 	 * @param id The id of the employee
 	 */	
 	@ShellMethod("Removes all users")
