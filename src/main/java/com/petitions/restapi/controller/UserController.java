@@ -39,7 +39,9 @@ public class UserController {
 	 */
 	@GetMapping("/users")
 	public Iterable<User> getUsers(){
-		return userService.getUsers();
+		Iterable<User> it = userService.getUsers();
+		System.out.println(it.toString());
+		return it;
 	}
 	
 	/**
@@ -82,7 +84,7 @@ public class UserController {
 	 * Delete - Delete one employee 
 	 * @param id The id of the employee
 	 */	
-	@DeleteMapping("/user/searchId/{id}")
+	@DeleteMapping("/user/{id}")
     public void deleteUser(@PathVariable("id") final Long id) {
     	userService.deleteUser(id);
     }
