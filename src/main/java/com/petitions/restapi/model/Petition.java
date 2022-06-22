@@ -54,4 +54,8 @@ public class Petition {
           ", number of signatures=" + this.signatureNumber +
           '}';
     }
+    
+    public Long getId() {
+    	return this.id;
+    }
 }
