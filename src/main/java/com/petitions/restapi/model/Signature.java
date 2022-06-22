@@ -25,4 +25,36 @@ public class Signature {
 		this.petition = petition;
 		this.date = date;
 	}
+    
+    public Long getId() {
+    	return this.id;
+    }
+    
+    public void setId(Long id) {
+    	this.id = id;
+    }
+    
+    public Long getSignatory() {
+    	return this.signatory;
+    }
+    
+    public void setSignatory(Long signatory) {
+    	this.signatory = signatory;
+    }
+    
+    public Long getPetition() {
+    	return this.petition;
+    }
+    
+    public void setPetition(Long petition) {
+    	this.petition = petition;
+    }
+    
+    public Date getDate() {
+    	return this.date;
+    };
+    
+    public void setDate(Date date) {
+    	this.date = date;
+    };
 }
