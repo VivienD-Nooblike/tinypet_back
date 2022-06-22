@@ -5,8 +5,48 @@ The goal is to create a small scalable REST API using Google Cloud Platform
 Members of the project : DUVERNOIS Vivien and HERVIEUX Hugo
 
 Link to app : https://tinypet-354117.oa.r.appspot.com
+Link to API : https://tinypetback.nw.r.appspot.com/
 
-# Endpoints
+# Endpoints #
+|Name|Method|URL|Usage|
+|---|---|---|---|
+|getUsers|GET|/users|Get all users|
+|getUser|GET|/user/{id}|Get the user identified by the parameter id|
+|getUsersByLastNameAndFirstName|GET|/users/searchName/{firstName}/{lastName}|Get a list of users with corresponding names|
+|getUsersByMail|GET/user/searchMail/{mail}|Get a list of user ocrresponding to this mail adress|
+|saveUser|POST|/user|Creates a new user|
+|deleteUser|DELETE|/user/{id}|Delete the user identified by the parameter id|
+
+|Name|Method|URL|Usage|
+|---|---|---|---|
+|getPetitions|GET|/petitions|Get all petitions|
+|getPetition|GET|/petition/{id}|Get the petition identified by the parameter id|
+|savePetition|POST|/petition|Creates a new petition|
+|deletePetition|DELETE|/petition/{id}|Delete the petition identified by the parameter id|
+
+|Name|Method|URL|Usage|
+|---|---|---|---|
+|getSignatures|GET|/signatures|Get all signatures|
+|getSignature|GET|/signature/{id}|Get the signature identified by the parameter id|
+|saveSignature|POST|/signature|Creates a new signature|
+|deleteSignature|DELETE|/signature/{id}|Delete the signature identified by the parameter id|
+
+# Shell Methods #
+|Name|Command|Usage|
+|---|---|---|
+|deleteAllPetitions|delete-all-petitions|deleting all petitions from the datastore|
+|populatePetitions|populate-petitions <number>|creating 'number' petitions|
+
+|Name|Command|Usage|
+|---|---|---|
+|deleteAllSignatures|delete-all-signatures|deleting all signatures from the datastore|
+|populateSignatures|populate-signatures <number>|creating 'number' signatures|
+
+|Name|Command|Usage|
+|---|---|---|
+|deleteAllUsers|delete-all-users|deleting all users from the datastore|
+|populateUsers|populate-users <number>|creating 'number' users|
+
 
 # Datastore Schemes #
 ## Petition ##
