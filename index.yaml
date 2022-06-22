@@ -3,11 +3,6 @@ indexes:
     properties:
       - name: titre
       - name: tags
-
-  - kind: Petition
-    properties:
-      - name: signature_number
-        direction: desc
       
   - kind: Petition
     properties:
