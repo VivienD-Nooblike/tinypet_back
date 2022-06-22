@@ -94,6 +94,7 @@ public class PetitionController {
 	@ShellMethod("Add a give number of random petition to the datastore : populate-petitions <number>")
 	public String populatePetitions(int nb) {
 		ArrayList<Petition> listPetition = new ArrayList<>();//for visual confirmation
+		
 		List<User> users = new ArrayList<User>();
 		userService.getUsers().forEach(users::add);
 		for (int i=0 ; i<nb ; i++) {			
@@ -109,7 +110,7 @@ public class PetitionController {
 					
 			//Put Petition into data store
 			listPetition.add(petition);
-			petitionService.savePetition(null);
+			petitionService.savePetition(petition);
 		}
 		//visual confirmation
 		return listPetition.toString();
@@ -139,7 +140,7 @@ public class PetitionController {
 				"#JusticePenale", "#Education", "#Handicap", "#Famille", "#Patrimoine", "#Autre"};
 		HashSet<String> result = new HashSet<String>();
 		for(int i=0 ; i<nb ; i++) {
-			result.add(tags[ThreadLocalRandom.current().nextInt(0,18)]);
+			result.add(tags[ThreadLocalRandom.current().nextInt(0,17)]);
 		}
 		return result;
 	}
