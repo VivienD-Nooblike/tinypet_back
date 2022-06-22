@@ -8,6 +8,37 @@ Link to app : https://tinypet-354117.oa.r.appspot.com
 
 # Endpoints
 
-# Datastore Schemes
+# Datastore Schemes #
+## Petition ##
+|  id | creator  |  title | description  | tags  |
+|---|---|---|---|---|
+|   |   |   |   |   |
+|   |   |   |   |   |
+|   |   |   |   |   |
 
-# Indexes
+# Indexes #
+indexes:
+  - kind: Petition
+    properties:
+      - name: titre
+      - name: tags
+      
+  - kind: Petition
+    properties:
+      - name: creator
+      - name: titre
+  
+  - kind: User
+    properties:
+      - name: first_name
+      - name: last_name
+  
+  - kind: Signature
+    properties:
+      - name: petition
+      - name: signatory
+  
+  - kind: Signature
+    properties:
+      - name: petition
+      - name: date
