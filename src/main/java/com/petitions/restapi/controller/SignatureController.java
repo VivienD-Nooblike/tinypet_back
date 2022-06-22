@@ -9,6 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,7 @@ import com.petitions.restapi.service.PetitionService;
 import com.petitions.restapi.service.SignatureService;
 import com.petitions.restapi.service.UserService;
 
+@CrossOrigin
 @ShellComponent
 @RestController
 public class SignatureController {
