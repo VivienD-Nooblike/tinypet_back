@@ -8,12 +8,8 @@ import com.google.cloud.spring.data.datastore.core.mapping.Entity;
 import com.google.cloud.spring.data.datastore.core.mapping.Field;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
-@Getter
-@Setter
 @Entity(name = "signature")
 public class Signature {
 	@Id

@@ -9,12 +9,8 @@ import com.google.cloud.spring.data.datastore.core.mapping.Entity;
 import com.google.cloud.spring.data.datastore.core.mapping.Field;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
-@Getter
-@Setter
 @Entity(name = "petition")
 public class Petition {
 	@Id
@@ -47,7 +43,6 @@ public class Petition {
           ", creator id='" + this.creator + '\'' +
           ", title='" + this.title + '\'' +
           ", description='" + this.description + '\'' +
-          ", tags='" + this.tags.toString() + '\'' +
           ", creation date='" + this.startDate.toString() + '\'' +
           ", ending date='" + this.endDate.toString() + '\'' +
           ", tags='" + this.tags.toString() + '\'' +
@@ -58,4 +53,64 @@ public class Petition {
     public Long getId() {
     	return this.id;
     }
+    
+    public void setId(Long id) {
+    	this.id = id;
+    };
+
+    public Long getCreator() {
+    	return this.creator;
+    };
+    
+    public void setCreator(Long creator) {
+    	this.creator = creator;
+    };
+    
+    public String getTitle() {
+    	return this.title;
+    };
+    
+    public void setTitle(String title) {
+    	this.title = title;
+    };
+    
+    public String getDescription() {
+    	return this.description;
+    };	
+    
+    public void setDescription(String description) {
+    	this.description = description;
+    };
+    
+    public HashSet<String> getTags() {
+    	return this.tags;
+    };
+    
+    public void setTags(HashSet<String> tags) {
+    	this.tags = tags;
+    };
+    
+    public int getSignatureNumber() {
+    	return this.signatureNumber;
+    };
+    
+    public void setSignatureNumber(int signatureNumber) {
+    	this.signatureNumber = signatureNumber;
+    };
+    
+    public Date getStartDate() {
+    	return this.startDate;
+    };
+    
+    public void setStartDate(Date startDate) {
+    	this.startDate = startDate;
+    };
+    
+    public Date getEndDate() {
+    	return this.endDate;
+    };
+    
+    public void setEndDate(Date endDate) {
+    	this.endDate = endDate;
+    };
 }
