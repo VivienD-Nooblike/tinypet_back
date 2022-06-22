@@ -63,7 +63,7 @@ public class UserController {
 	 * Read - Get all users with this first name and this last name
 	 * @param firstName The first name of the user
 	 * @param lastName The last name of the user
-	 * @return An Employee object full filled
+	 * @return Between 0 and n User object full filled
 	 */
 	@GetMapping("/users/searchName/{firstName}/{lastName}")
 	List<User> getUsersByLastNameAndFirstName(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName){
@@ -71,9 +71,9 @@ public class UserController {
 	};
 	
 	/**
-	 * Read - Get one employee
-	 * @param id The id of the employee
-	 * @return An Employee object full filled
+	 * Read - Get one user with a corresponding email adress
+	 * @param mail The mail of the user
+	 * @return A User object full filled
 	 */
 	@GetMapping("/user/searchMail/{mail}")
 	List<User> getUsersByMail(@PathVariable("mail") String mail){
@@ -81,8 +81,8 @@ public class UserController {
 	};
 	
 	/**
-	 * Delete - Delete one employee 
-	 * @param id The id of the employee
+	 * Delete - Delete one user 
+	 * @param id The id of the user
 	 */	
 	@DeleteMapping("/user/{id}")
     public void deleteUser(@PathVariable("id") final Long id) {
@@ -92,8 +92,7 @@ public class UserController {
 	//SHELL METHODS
 	
 	/**
-	 * Delete - Delete all users 
-	 * @param id The id of the employee
+	 * Delete - Delete all users
 	 */	
 	@ShellMethod("Removes all users")
     public void deleteAllUsers() {
