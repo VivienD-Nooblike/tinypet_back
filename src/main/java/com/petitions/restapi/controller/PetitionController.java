@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.petitions.restapi.model.Petition;
+import com.petitions.restapi.model.User;
 import com.petitions.restapi.service.PetitionService;
 import com.petitions.restapi.service.UserService;
 
@@ -92,9 +94,11 @@ public class PetitionController {
 	@ShellMethod("Add a give number of random petition to the datastore : populate-petitions <number>")
 	public String populatePetitions(int nb) {
 		ArrayList<Petition> listPetition = new ArrayList<>();//for visual confirmation
+		List<User> users = new ArrayList<User>();
+		userService.getUsers().forEach(users::add);
 		for (int i=0 ; i<nb ; i++) {			
-			//Petition creationthis.creator = creator;
-			Long userId = userService.getUsers().iterator().next().getId();
+			//Petition creation
+			Long userId = users.get(ThreadLocalRandom.current().nextInt(0,users.size())).getId();
 	    	String title = "Petition Title - "+i;
 	    	String description = "The description of petition n°"+i;
 	    	HashSet<String> tags = randomTags(Math.floorMod(i, 5)+1);
