@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
+import org.apache.commons.lang3.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.appengine.api.search.DateUtil;
 import com.petitions.restapi.model.Petition;
 import com.petitions.restapi.model.User;
 import com.petitions.restapi.service.PetitionService;
@@ -105,7 +107,7 @@ public class PetitionController {
 	    	HashSet<String> tags = randomTags(Math.floorMod(i, 5)+1);
 	    	int signatureNumber = ThreadLocalRandom.current().nextInt(0,500);
 	    	Date startDate = randomDate();
-	    	Date endDate = null;  
+	    	Date endDate = DateUtils.addYears(startDate, 2);  
 			Petition petition = new Petition(userId, title, description, tags, signatureNumber, startDate, endDate);
 					
 			//Put Petition into data store
