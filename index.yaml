@@ -1,0 +1,30 @@
+indexes:
+  - kind: Petition
+    properties:
+      - name: titre
+      - name: tags
+
+  - kind: Petition
+    properties:
+      - name: signature_number
+        direction: desc
+      
+  - kind: Petition
+    properties:
+      - name: creator
+      - name: titre
+  
+  - kind: User
+    properties:
+      - name: first_name
+      - name: last_name
+  
+  - kind: Signature
+    properties:
+      - name: petition
+      - name: signatory
+  
+  - kind: Signature
+    properties:
+      - name: petition
+      - name: date
