@@ -51,7 +51,7 @@ public class PetitionController {
 	@GetMapping("/petitions")
 	public Iterable<Petition> getPetitions(){
 		Iterable<Petition> it = petitionService.getPetitions();
-		System.out.println(it.toString());
+		//System.out.println(it.toString());
 		return it;
 	}
 	
